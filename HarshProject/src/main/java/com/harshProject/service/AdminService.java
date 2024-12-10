@@ -1,5 +1,7 @@
 package com.harshProject.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,9 @@ public class AdminService {
     }
     public boolean isUserIdExists(String userId) {
         return adminRepository.existsByUserId(userId);
+    }
+    public List<Admin> getAllAdmins() {
+        return adminRepository.findAll(); 
     }
 
 }

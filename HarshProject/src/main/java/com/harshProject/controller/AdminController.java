@@ -1,6 +1,7 @@
 package com.harshProject.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,5 +86,20 @@ public class AdminController {
             return ResponseEntity.ok(response);
         }
     }
+    @GetMapping("/all")
+    public ResponseEntity<Map<String, Object>> getAllAdmins() {
+        Map<String, Object> response = new HashMap<>();
+        
+        List<Admin> admins = adminService.getAllAdmins();
+        if (!admins.isEmpty()) {
+            response.put("status", "success");
+            response.put("data", admins);
+            return ResponseEntity.ok(response);
+        } else {
+            response.put("status", "error");
+            response.put("message", "No admins found.");
+            return ResponseEntity.ok(response);
+        }
+    }
+    
 }
-
