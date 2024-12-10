@@ -1,2 +1,0 @@
-Purpose: To hold Spring configurations such as security, CORS, or custom beans.
-Examples: WebSecurityConfig, AppConfig.

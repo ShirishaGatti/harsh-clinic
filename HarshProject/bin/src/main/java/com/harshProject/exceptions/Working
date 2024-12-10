@@ -1,2 +1,0 @@
-Purpose: To centralize exception handling logic.
-Examples: CustomException, ResourceNotFoundException
